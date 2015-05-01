@@ -26,10 +26,21 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 			throw new IllegalArgumentException ("p is a probability value!");
 		
 		Random randomGenerator = new Random();
+		Vertex V = new Vertex();
 	   
 		for (int i = 0; i <= n; ++i)
 		{
-	      //int randomInt = randomGenerator.nextInt(100);
+			adjList.add(V);
+			V.setID(i);
+			
+	        float randomX = randomGenerator.nextInt(100);
+	        float randomY = randomGenerator.nextInt(100);
+	        float randomZ = randomGenerator.nextInt(100);
+	        
+	        V.setX(randomX);
+	        V.setY(randomY);
+	        V.setZ(randomZ);
+	        
 		}
 		
 		return null;

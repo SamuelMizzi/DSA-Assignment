@@ -1,6 +1,5 @@
 package mt.edu.um;
 
-import java.util.ArrayList;
 
 public class Vertex 
 {
@@ -23,17 +22,17 @@ public class Vertex
 		this.ID = ID;
 	}
 	
-	public void setX (int x)
+	public void setX (float x)
 	{
 		this.x = x;
 	}
 	
-	public void setY (int y)
+	public void setY (float y)
 	{
 		this.y = y;
 	}
 	
-	public void setZ (int z)
+	public void setZ (float z)
 	{
 		this.z = z;
 	}
