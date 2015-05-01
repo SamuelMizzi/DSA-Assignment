@@ -57,10 +57,5 @@ public class Vertex
 	{
 		return z;
 	}
-	
-
-	
-	private ArrayList<Vertex> adjList = new ArrayList<Vertex>();
-	
 
 }
