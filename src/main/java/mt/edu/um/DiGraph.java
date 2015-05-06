@@ -7,43 +7,53 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 {  
 	
 	private ArrayList<Vertex> adjList = new ArrayList<Vertex>();
-	private int edge;
+	//private int edge;
 	
 	public DiGraph () { }
 	
-	public DiGraph (int edge)
+	public DiGraph (int n, float p)
 	{
-		this.edge = edge;
+		buildGraph(n, p);
 	}
 	
 	
-	public DiGraph buildGraph (int n, float p)
+	public DiGraph buildGraph (int n, double p)
 	{
 		if (n <= 0)
 			throw new IllegalArgumentException ("n must be a positive integer!");
 		
 		if ((p < 0) || (p > 1))
-			throw new IllegalArgumentException ("p is a probability value!");
+			throw new IllegalArgumentException ("p must be between 0 and 1!");
 		
 		Random randomGenerator = new Random();
-		Vertex V = new Vertex();
+		//Vertex V = new Vertex();
 	   
-		for (int i = 0; i <= n; ++i)
+		for (int i = 0; i < n; ++i)
 		{
-			adjList.add(V);
-			V.setID(i);
+			
+			//adjList.add(V);
+			
 			
 	        float randomX = randomGenerator.nextInt(100);
 	        float randomY = randomGenerator.nextInt(100);
 	        float randomZ = randomGenerator.nextInt(100);
 	        
-	        V.setX(randomX);
-	        V.setY(randomY);
-	        V.setZ(randomZ);
+	        //V.setX(randomX);
+	        //V.setY(randomY);
+	        //V.setZ(randomZ);
+	        
+	        Vertex V = new Vertex(i , randomX, randomY, randomZ);
+	        adjList.add(V);
 	        
 		}
 		
 		return null;
+	}
+	
+	public boolean addVertex (Vertex v)
+	{
+		adjList.add(v);
+		return true;
 	}
 
 }
