@@ -30,17 +30,9 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 	   
 		for (int i = 0; i < n; ++i)
 		{
-			
-			//adjList.add(V);
-			
-			
 	        float randomX = randomGenerator.nextInt(100);
 	        float randomY = randomGenerator.nextInt(100);
 	        float randomZ = randomGenerator.nextInt(100);
-	        
-	        //V.setX(randomX);
-	        //V.setY(randomY);
-	        //V.setZ(randomZ);
 	        
 	        Vertex V = new Vertex(i , randomX, randomY, randomZ);
 	        adjList.add(V);
@@ -50,10 +42,12 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 		return null;
 	}
 	
+	/*
 	public boolean addVertex (Vertex v)
 	{
 		adjList.add(v);
 		return true;
 	}
+	*/
 
 }
