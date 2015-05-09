@@ -8,7 +8,6 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 	
 	private ArrayList<Vertex> adjList = new ArrayList<Vertex>();
 	private ArrayList<Edge> edges = new ArrayList<Edge>();
-	//private int edge;
 	
 	public DiGraph () { }
 	
@@ -27,22 +26,15 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 			throw new IllegalArgumentException ("p must be between 0 and 1!");    //tbc
 		
 		Random randGen = new Random();
-		int eProb = 0;    // all possible edges that can exist
-		//Vertex V = new Vertex();
+		int eProb = 0;    // will represent all the possible number of edges that may exist
 	    
 		// creating the vertices of the graph
 		for (int i = 0; i < n; ++i)
 		{
-	        double rX1 = randGen.nextDouble();
-	        int rX2 = randGen.nextInt(100);
-	        double randX = rX1 + rX2;
-	        double rY1 = randGen.nextDouble();
-	        int rY2 = randGen.nextInt(100);
-	        double randY = rY1 + rY2;
-	        double rZ1 = randGen.nextDouble();
-	        int rZ2 = randGen.nextInt(100);
-	        double randZ = rZ1 + rZ2;
 	        
+	        double randX = dimensions();
+	        double randY = dimensions();
+	        double randZ = dimensions();
 	        
 	        Vertex V = new Vertex(i, randX, randY, randZ);
 	        adjList.add(V);
@@ -57,18 +49,8 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 		}
 		
 		eProb *= 2;    // since edges are directed
-		//double prob = randGenerator.nextDouble();  // number between 0 and 1
-		//System.out.println(prob);
-		
-		// finding the number of checks to be done all the different pairs of edges that exist in the graph
-		/*int eProb = 0;
-		for (int i = n; i != 0; --i)
-		{
-			eProb += i;
-		}  */
 		System.out.println(eProb);
-		//if (p <= prob)
-		// and calculate distances
+		
 		Vertex a = null;
 		Vertex b = null;
 		int m = eProb / n;   // m is the max no of edges that can be created in a single count/loop...
@@ -104,6 +86,18 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 		return null;
 	}
 	
+	
+	public double dimensions ()
+	{
+		Random randGen = new Random();
+		
+		double randDim1 = randGen.nextDouble();
+        int randDim2 = randGen.nextInt(100);
+        double randD = randDim1 + randDim2;
+        
+        return randD;
+	}
+	
 	// method to find the distance of the edge between the two particular vertices
 	public double vertexDistance (Vertex a, Vertex b)  
 	{
@@ -128,6 +122,19 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 		
 		return ans;
 	}
+	
+	
+	public int getVertices ()
+	{
+		return adjList.size();
+	}
+	
+	public int getEdges ()
+	{
+		return edges.size();
+	}
+	
+	
 	
 	
 	
