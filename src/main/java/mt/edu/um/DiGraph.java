@@ -7,6 +7,7 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 {  
 	
 	private ArrayList<Vertex> adjList = new ArrayList<Vertex>();
+	private ArrayList<Edge> edges = new ArrayList<Edge>();
 	//private int edge;
 	
 	public DiGraph () { }
@@ -60,27 +61,61 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 		}  */
 		System.out.println(eProb);
 		//if (p <= prob)
+		// and calculate distances
 		Vertex a = null;
 		Vertex b = null;
-		for (int i = 0; i < eProb; ++i)
+		int m = eProb / n;   // m is the max no of edges that can be created in a single count/loop...
+		
+		for (int i = 0; i < n; ++i)
 		{
-			if (i == 0)
-				a = adjList.get(i);
-			
-			else if ((eProb / i) == 3)
-			
-			
-		} 
+			a = adjList.get(i);
+			for (int j = 0; j <= m; ++j)
+			{
+				if (i == j)     // no edges at the same vertex
+					++j;  
+				
+				b = adjList.get(j);
+				if (p <= prob) continue;
+				
+				else 
+				{
+					// working distance between the 2 vertices
+					double dist = vertexDistance(a, b);
+					Edge E = new Edge(a, b, dist);
+					edges.add(E);
+				}
+			}
+		}
 		return null;
 	}
 	
-	/*
-	public boolean addVertex (Vertex v)
+	// method to find the distance of the edge between the two particular vertices
+	public double vertexDistance (Vertex a, Vertex b)  
 	{
-		adjList.add(v);
-		return true;
+		double aX = a.getX(),
+			   aY = a.getY(),
+			   aZ = a.getZ(),
+			   bX = b.getX(),
+			   bY = b.getY(),
+			   bZ = b.getZ();
+		
+		double squareX = bX - aX;
+		squareX *= squareX;
+		
+		double squareY = bY - aY;
+		squareY *= squareY;
+		
+		double squareZ = bZ - aZ;
+		squareZ *= squareZ;
+		
+		double ans = squareX + squareY + squareZ;
+		ans = Math.sqrt(ans);
+		
+		return ans;
 	}
-	*/
+	
+	
+	
 	// then seperate the classes...
 	//public void edges ()   // edges are created according to the probability
 
