@@ -26,8 +26,10 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 			throw new IllegalArgumentException ("p must be between 0 and 1!");    //tbc
 		
 		Random randGenerator = new Random();
+		int eProb = 0;
 		//Vertex V = new Vertex();
-	   
+	    
+		// creating the vertices of the graph
 		for (int i = 0; i < n; ++i)
 		{
 	        float randX = randGenerator.nextInt(100);
@@ -42,13 +44,29 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 	        System.out.println("Y " + randY);
 	        System.out.println("Z " + randZ);
 	        
+	        // finding the number of checks to be done all the different pairs of edges that exist in the graph
+	        eProb += i;
 		}
 		
+		eProb *= 2;    // since edges are directed
 		double prob = randGenerator.nextDouble();  // number between 0 and 1
-		System.out.println(prob);
+		//System.out.println(prob);
 		
-		
+		// finding the number of checks to be done all the different pairs of edges that exist in the graph
+		/*int eProb = 0;
+		for (int i = n; i != 0; --i)
+		{
+			eProb += i;
+		}  */
+		System.out.println(eProb);
 		//if (p <= prob)
+		/*
+		for (int i = 0; i < eProb; ++i)
+		{
+			Vertex a = adjList.get(i);
+			
+			
+		} */
 		return null;
 	}
 	
