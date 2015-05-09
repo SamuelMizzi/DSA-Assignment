@@ -20,25 +20,35 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 	public DiGraph buildGraph (int n, double p)
 	{
 		if (n <= 0)
-			throw new IllegalArgumentException ("n must be a positive integer!");
+			throw new IllegalArgumentException ("n must be a positive integer!");  //tbc
 		
 		if ((p < 0) || (p > 1))
-			throw new IllegalArgumentException ("p must be between 0 and 1!");
+			throw new IllegalArgumentException ("p must be between 0 and 1!");    //tbc
 		
-		Random randomGenerator = new Random();
+		Random randGenerator = new Random();
 		//Vertex V = new Vertex();
 	   
 		for (int i = 0; i < n; ++i)
 		{
-	        float randomX = randomGenerator.nextInt(100);
-	        float randomY = randomGenerator.nextInt(100);
-	        float randomZ = randomGenerator.nextInt(100);
+	        float randX = randGenerator.nextInt(100);
+	        float randY = randGenerator.nextInt(100);
+	        float randZ = randGenerator.nextInt(100);
 	        
-	        Vertex V = new Vertex(i , randomX, randomY, randomZ);
+	        Vertex V = new Vertex(i, randX, randY, randZ);
 	        adjList.add(V);
+	        
+	        System.out.println("Vertex: " + i);  // checking
+	        System.out.println("X " + randX);
+	        System.out.println("Y " + randY);
+	        System.out.println("Z " + randZ);
 	        
 		}
 		
+		double prob = randGenerator.nextDouble();  // number between 0 and 1
+		System.out.println(prob);
+		
+		
+		//if (p <= prob)
 		return null;
 	}
 	
@@ -49,5 +59,7 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 		return true;
 	}
 	*/
+	// then seperate the classes...
+	//public void edges ()   // edges are created according to the probability
 
 }
