@@ -26,16 +26,23 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 		if ((p < 0) || (p > 1))
 			throw new IllegalArgumentException ("p must be between 0 and 1!");    //tbc
 		
-		Random randGenerator = new Random();
-		int eProb = 0;
+		Random randGen = new Random();
+		int eProb = 0;    // all possible edges that can exist
 		//Vertex V = new Vertex();
 	    
 		// creating the vertices of the graph
 		for (int i = 0; i < n; ++i)
 		{
-	        float randX = randGenerator.nextInt(100);
-	        float randY = randGenerator.nextInt(100);
-	        float randZ = randGenerator.nextInt(100);
+	        double rX1 = randGen.nextDouble();
+	        int rX2 = randGen.nextInt(100);
+	        double randX = rX1 + rX2;
+	        double rY1 = randGen.nextDouble();
+	        int rY2 = randGen.nextInt(100);
+	        double randY = rY1 + rY2;
+	        double rZ1 = randGen.nextDouble();
+	        int rZ2 = randGen.nextInt(100);
+	        double randZ = rZ1 + rZ2;
+	        
 	        
 	        Vertex V = new Vertex(i, randX, randY, randZ);
 	        adjList.add(V);
@@ -50,7 +57,7 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 		}
 		
 		eProb *= 2;    // since edges are directed
-		double prob = randGenerator.nextDouble();  // number between 0 and 1
+		//double prob = randGenerator.nextDouble();  // number between 0 and 1
 		//System.out.println(prob);
 		
 		// finding the number of checks to be done all the different pairs of edges that exist in the graph
@@ -66,15 +73,20 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 		Vertex b = null;
 		int m = eProb / n;   // m is the max no of edges that can be created in a single count/loop...
 		
+		// creating edges in the graph according to probability
 		for (int i = 0; i < n; ++i)
 		{
 			a = adjList.get(i);
+			System.out.println("Source: " + a.getID());
 			for (int j = 0; j <= m; ++j)
 			{
-				if (i == j)     // no edges at the same vertex
-					++j;  
+				if ((i == j))     // no edges at the same vertex
+					++j; 
+				
+				if (j > m) break;   //////////////
 				
 				b = adjList.get(j);
+				double prob = randGen.nextDouble();
 				if (p <= prob) continue;
 				
 				else 
@@ -83,9 +95,12 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 					double dist = vertexDistance(a, b);
 					Edge E = new Edge(a, b, dist);
 					edges.add(E);
+					System.out.println("Edge Created " + E.getDistance());
 				}
 			}
 		}
+		System.out.println(adjList.size());
+		System.out.println(edges.size());
 		return null;
 	}
 	

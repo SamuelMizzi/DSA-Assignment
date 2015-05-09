@@ -9,6 +9,6 @@ public class Main
         
         DiGraph dg = new DiGraph();
         
-        dg.buildGraph(4, 1.00);
+        dg.buildGraph(4, 0.77);
     }
 }

@@ -4,11 +4,11 @@ package mt.edu.um;
 public class Vertex 
 {
 	private int ID;
-	private float x, y, z;
+	private double x, y, z;
 	
 	public Vertex () { }
 	
-	public Vertex (int ID, float x, float y, float z)
+	public Vertex (int ID, double x, double y, double z)
 	{
 		this.ID = ID;
 		this.x = x;
@@ -42,17 +42,17 @@ public class Vertex
 		return ID;
 	}
 	
-	float getX ()
+	double getX ()
 	{
 		return x;
 	}
 	
-	float getY ()
+	double getY ()
 	{
 		return y;
 	}
 	
-	float getZ ()
+	double getZ ()
 	{
 		return z;
 	}
