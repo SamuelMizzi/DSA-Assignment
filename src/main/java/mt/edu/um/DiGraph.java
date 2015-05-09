@@ -60,13 +60,17 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 		}  */
 		System.out.println(eProb);
 		//if (p <= prob)
-		/*
+		Vertex a = null;
+		Vertex b = null;
 		for (int i = 0; i < eProb; ++i)
 		{
-			Vertex a = adjList.get(i);
+			if (i == 0)
+				a = adjList.get(i);
+			
+			else if ((eProb / i) == 3)
 			
 			
-		} */
+		} 
 		return null;
 	}
 	
