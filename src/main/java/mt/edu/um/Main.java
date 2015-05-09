@@ -10,5 +10,8 @@ public class Main
         DiGraph dg = new DiGraph();
         
         dg.buildGraph(4, 0.5);
+        
+        System.out.println(dg.getVertices());
+        System.out.println(dg.getEdges());
     }
 }

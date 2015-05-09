@@ -81,8 +81,7 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 				}
 			}
 		}
-		System.out.println(adjList.size());
-		System.out.println(edges.size());
+
 		return null;
 	}
 	
