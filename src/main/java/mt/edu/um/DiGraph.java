@@ -11,13 +11,13 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 	
 	public DiGraph () { }
 	
-	public DiGraph (int n, float p)
+	public DiGraph (int n, double p)
 	{
 		buildGraph(n, p);
 	}
 	
 	
-	public DiGraph buildGraph (int n, double p)
+	public void buildGraph (int n, double p)
 	{
 		if (n <= 0)
 			throw new IllegalArgumentException ("n must be a positive integer!");  //tbc
@@ -78,11 +78,10 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 					Edge E = new Edge(a, b, dist);
 					edges.add(E);
 					System.out.println("Edge Created " + E.getDistance());
+					// check if cycles can be created or not 
 				}
 			}
 		}
-
-		return null;
 	}
 	
 	
@@ -138,6 +137,7 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 	
 	
 	// then seperate the classes...
-	//public void edges ()   // edges are created according to the probability
+	//public int vertices (int n)...
+	//public void edges (float p)   // edges are created according to the probability
 
 }

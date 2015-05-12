@@ -9,9 +9,16 @@ public class Main
         
         DiGraph dg = new DiGraph();
         
-        dg.buildGraph(4, 0.5);
+        dg.buildGraph(5, 0.77);
+        
+        
+        //ShortestPath sp = new ShortestPath();
+        //sp.path(dg);
         
         System.out.println(dg.getVertices());
         System.out.println(dg.getEdges());
+        
+        ShortestPath sp = new ShortestPath();
+        //sp.getDistance(, 6);
     }
 }
