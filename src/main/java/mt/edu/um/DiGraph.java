@@ -125,14 +125,24 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 	}
 	
 	
-	public int getVertices ()
+	public int getVertexSize ()
 	{
 		return adjList.size();
 	}
 	
-	public int getEdges ()
+	public int getEdgeSize ()
 	{
 		return edges.size();
+	}
+	
+	public List<Vertex> getVertices ()
+	{
+		return adjList;
+	}
+	
+	public List<Edge> getEdges ()
+	{
+		return edges;
 	}
 	
 	public Vertex getVertex (int index)

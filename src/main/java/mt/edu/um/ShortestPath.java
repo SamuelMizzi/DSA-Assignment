@@ -7,8 +7,14 @@ import java.util.List;
 public class ShortestPath  // finding the shortest path between 2 vertices (q & r), using Dijkstra's Algorithm
 { 
 	
-	private final List<Vertex> nodes = new ArrayList<Vertex>();
-	private final List<Edge> edges = new ArrayList<Edge>();
+	private List<Vertex> vertices;
+	private List<Edge> edges;
+	
+	public ShortestPath (DiGraph graph)
+	{
+		this.vertices = new ArrayList<Vertex>(graph.getVertices());
+		this.edges = new ArrayList<Edge>(graph.getEdges());
+	}
 	
 	public void path(DiGraph g)
 	{

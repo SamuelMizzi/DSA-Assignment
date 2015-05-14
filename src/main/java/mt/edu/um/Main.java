@@ -15,10 +15,17 @@ public class Main
         //ShortestPath sp = new ShortestPath();
         //sp.path(dg);
         
-        System.out.println(dg.getVertices());
-        System.out.println(dg.getEdges());
+        System.out.println(dg.getVertexSize());
+        System.out.println(dg.getEdgeSize());
         
-        ShortestPath sp = new ShortestPath();
-        //sp.getDistance(, 6);
+        Vertex v1 = dg.getVertex(0);
+        Vertex v2 = dg.getVertex(1);
+       
+        System.out.println(v1.getID());
+        
+        ShortestPath sp = new ShortestPath(dg);
+        double r = sp.getDistance(v1, v2);
+        
+        System.out.println(r);
     }
 }
