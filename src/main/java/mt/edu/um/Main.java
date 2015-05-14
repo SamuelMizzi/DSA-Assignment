@@ -1,5 +1,8 @@
 package mt.edu.um;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Main 
 {
@@ -9,7 +12,7 @@ public class Main
         
         DiGraph dg = new DiGraph();
         
-        dg.buildGraph(5, 0.77);
+        dg.buildGraph(5, 0.5);
         
         
         //ShortestPath sp = new ShortestPath();
@@ -26,6 +29,15 @@ public class Main
         ShortestPath sp = new ShortestPath(dg);
         double r = sp.getDistance(v1, v2);
         
-        System.out.println(r);
+        /////////////////////////////////////////////////////////////
+        List <Vertex> n = new ArrayList<Vertex>();
+        n = dg.getNeighbours(v1);
+        System.out.println("Neighbours of vertex 0");
+        for (Vertex v: n){
+        	System.out.println(v.getID());
+        }
+        /////////////////////////////////////////////////////////////
+        
+        sp.path(v1, v1);  // gives the same
     }
 }

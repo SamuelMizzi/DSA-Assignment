@@ -63,7 +63,7 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 			System.out.println("Source: " + a.getID());
 			for (int j = 0; j <= m; ++j)
 			{
-				if ((i == j))     // no edges at the same vertex
+				if ((i == j))     // no edges at the same vertex (having src and dst at the same vertex)
 					++j; 
 				
 				if (j > m) break;   //////////////
@@ -78,7 +78,7 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 					double dist = vertexDistance(a, b);
 					Edge E = new Edge(a, b, dist);
 					edges.add(E);
-					System.out.println("Edge Created " + E.getDistance());
+					System.out.println("Edge Created " + E.getDistance() + " Src: " + a.getID() + " Dst: " + b.getID());
 					// check if cycles can be created or not 
 					
 					
@@ -151,6 +151,20 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 	}
 	
 	//public Edge getEdge (int index)
+	
+	public List<Vertex> getNeighbours (Vertex v)
+	{
+		List<Vertex> neighbours = new ArrayList<Vertex>();
+		for (Edge E : edges)
+		{
+			if (E.getSource().equals(v))
+			{
+				neighbours.add(E.getDestination());
+			}
+		}
+		
+		return neighbours;			
+	}
 	
 	
 	
