@@ -32,17 +32,17 @@ public class Edge
 	}
 	
 	
-	Vertex getSource ()
+	public Vertex getSource ()
 	{
 		return source;
 	}
 	
-	Vertex getDestination ()
+	public Vertex getDestination ()
 	{
 		return destination;
 	}
 	
-	double getDistance ()
+	public double getDistance ()
 	{
 		return distance;
 	}

@@ -37,22 +37,22 @@ public class Vertex
 		this.z = z;
 	}
 	
-	int getID ()
+	public int getID ()
 	{
 		return ID;
 	}
 	
-	double getX ()
+	public double getX ()
 	{
 		return x;
 	}
 	
-	double getY ()
+	public double getY ()
 	{
 		return y;
 	}
 	
-	double getZ ()
+	public double getZ ()
 	{
 		return z;
 	}

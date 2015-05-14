@@ -1,13 +1,14 @@
 package mt.edu.um;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class DiGraph   // a random directed graph (using an adjacency list as a representation)
 {  
 	
-	private ArrayList<Vertex> adjList = new ArrayList<Vertex>();
-	private ArrayList<Edge> edges = new ArrayList<Edge>();
+	private List<Vertex> adjList = new ArrayList<Vertex>();
+	private List<Edge> edges = new ArrayList<Edge>();
 	
 	public DiGraph () { }
 	
@@ -79,6 +80,8 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 					edges.add(E);
 					System.out.println("Edge Created " + E.getDistance());
 					// check if cycles can be created or not 
+					
+					
 				}
 			}
 		}
@@ -131,6 +134,13 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 	{
 		return edges.size();
 	}
+	
+	public Vertex getVertex (int index)
+	{
+		return adjList.get(index);
+	}
+	
+	//public Edge getEdge (int index)
 	
 	
 	
