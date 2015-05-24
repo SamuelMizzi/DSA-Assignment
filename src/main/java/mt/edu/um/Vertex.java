@@ -8,7 +8,7 @@ public class Vertex     //  vertices build up the graph
 	
 	public Vertex () { }
 	
-	public Vertex (int ID, double x, double y, double z)
+	public Vertex (int ID, double x, double y, double z, boolean settled)
 	{
 		this.ID = ID;
 		this.x = x;
