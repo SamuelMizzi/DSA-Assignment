@@ -12,7 +12,24 @@ import java.util.TreeMap;
 
 
 public class ShortestPath  // finding the shortest path between 2 vertices (q & r), using Dijkstra's Algorithm
-{ 
+{
+	public double shortestPath (int q, int r, DiGraph g)
+	{
+		if ((q >= g.getVertexSize()) || r >= g.getVertexSize())   // validation
+		{
+			System.out.println("Vertex does not exist!");
+			return 0.0;
+		}
+		
+		double pathAcc = 0;
+		Vertex srcV, dstV;
+		
+		srcV = g.getVertex(q);
+		dstV = g.getVertex(r);
+		
+		
+		
+	}
 /*	
 	private List<Vertex> vertices;
 	private List<Edge> edges;

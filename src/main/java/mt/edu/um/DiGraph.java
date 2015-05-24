@@ -7,19 +7,19 @@ import java.util.Random;
 public class DiGraph   // a random directed graph (using an adjacency list as a representation)
 {  
 	
-	private List<Vertex> adjList = new ArrayList<Vertex>();
-	private List<Edge> edges = new ArrayList<Edge>();
+	private List<Vertex> adjList;   //  adjacency list made up of vertices
+	private List<Edge> edges;     // edges used to connect the vertices with each other (randomly)
 	
-	public DiGraph () { }
-	
-	public DiGraph (int n, double p)
+	public DiGraph ()
 	{
-		buildGraph(n, p);
+		adjList = new ArrayList<Vertex>();
+		edges = new ArrayList<Edge>();
 	}
 	
 	
-	public void buildGraph (int n, double p)
+	public DiGraph buildGraph (int n, double p)
 	{
+		DiGraph graph = new DiGraph();
 		if (n <= 0)
 			throw new IllegalArgumentException ("n must be a positive integer!");  //tbc
 		
@@ -38,7 +38,7 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 	        double randZ = dimensions();
 	        
 	        Vertex V = new Vertex(i, randX, randY, randZ);
-	        adjList.add(V);
+	        graph.adjList.add(V);
 	        
 	        System.out.println("Vertex: " + i);  // checking
 	        System.out.println("X " + randX);
@@ -52,14 +52,14 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 		eProb *= 2;    // since edges are directed
 		System.out.println(eProb);
 		
-		Vertex a = null;
-		Vertex b = null;
+		Vertex a = null,
+			   b = null;
 		int m = eProb / n;   // m is the max no of edges that can be created in a single count/loop...
 		
 		// creating edges in the graph according to probability
 		for (int i = 0; i < n; ++i)
 		{
-			a = adjList.get(i);
+			a = graph.adjList.get(i);
 			System.out.println("Source: " + a.getID());
 			for (int j = 0; j <= m; ++j)
 			{
@@ -68,7 +68,7 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 				
 				if (j > m) break;   //////////////
 				
-				b = adjList.get(j);
+				b = graph.adjList.get(j);
 				double prob = randGen.nextDouble();
 				if (p <= prob) continue;
 				
@@ -77,7 +77,7 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 					// working distance between the 2 vertices
 					double dist = vertexDistance(a, b);
 					Edge E = new Edge(a, b, dist);
-					edges.add(E);
+					graph.edges.add(E);
 					System.out.println("Edge Created " + E.getDistance() + " Src: " + a.getID() + " Dst: " + b.getID());
 					// check if cycles can be created or not 
 					
@@ -85,6 +85,7 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 				}
 			}
 		}
+		return graph;
 	}
 	
 	// method to generate the random dimensions for each vertex

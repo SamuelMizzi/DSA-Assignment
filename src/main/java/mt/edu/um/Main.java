@@ -8,23 +8,21 @@ public class Main
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
-        
         DiGraph dg = new DiGraph();
         
-        dg.buildGraph(5, 0.5);
+        dg = dg.buildGraph(5, 0.5);
         
         
         //ShortestPath sp = new ShortestPath();
         //sp.path(dg);
         
-        System.out.println(dg.getVertexSize());
-        System.out.println(dg.getEdgeSize());
+        System.out.println("Vertex Size: "  + dg.getVertexSize());
+        System.out.println("Edge Size: " + dg.getEdgeSize());
         
         Vertex v1 = dg.getVertex(0);
         Vertex v2 = dg.getVertex(1);
        
-        System.out.println(v1.getID());
+        System.out.println("Vertex 1 ID: " + v1.getID());
         /*
         ShortestPath sp = new ShortestPath(dg);
         double r = sp.getDistance(v1, v2);
