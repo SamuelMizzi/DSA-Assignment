@@ -13,7 +13,7 @@ import java.util.TreeMap;
 
 public class ShortestPath  // finding the shortest path between 2 vertices (q & r), using Dijkstra's Algorithm
 { 
-	
+/*	
 	private List<Vertex> vertices;
 	private List<Edge> edges;
 	
@@ -105,7 +105,7 @@ public class ShortestPath  // finding the shortest path between 2 vertices (q & 
 	    } else {
 	      return d;
 	    }
-	  }  */
+	  }  *//*
 	public List<Vertex> getNeighbours (Vertex v)
 	{
 		List<Vertex> neighbours = new ArrayList<Vertex>();
@@ -118,5 +118,5 @@ public class ShortestPath  // finding the shortest path between 2 vertices (q & 
 		}
 		
 		return neighbours;			
-	}
+	}  */
 }

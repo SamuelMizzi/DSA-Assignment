@@ -87,7 +87,7 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 		}
 	}
 	
-	
+	// method to generate the random dimensions for each vertex
 	public double dimensions ()
 	{
 		Random randGen = new Random();

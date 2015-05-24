@@ -1,6 +1,6 @@
 package mt.edu.um;
 
-public class Edge 
+public class Edge   // connections of the vertices found in the graph
 {
 	private Vertex source, destination;   
 	private double distance;

@@ -1,7 +1,7 @@
 package mt.edu.um;
 
-
-public class Vertex 
+ 
+public class Vertex     //  vertices build up the graph
 {
 	private int ID;
 	private double x, y, z;

@@ -25,7 +25,7 @@ public class Main
         Vertex v2 = dg.getVertex(1);
        
         System.out.println(v1.getID());
-        
+        /*
         ShortestPath sp = new ShortestPath(dg);
         double r = sp.getDistance(v1, v2);
         
@@ -39,5 +39,8 @@ public class Main
         /////////////////////////////////////////////////////////////
         
         sp.path(v1, v1);  // gives the same
+        */
+        
+        
     }
 }
