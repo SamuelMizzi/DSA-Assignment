@@ -5,6 +5,7 @@ public class Vertex     //  vertices build up the graph
 {
 	private int ID;
 	private double x, y, z;
+	private boolean settled;
 	
 	public Vertex () { }
 	
@@ -14,6 +15,7 @@ public class Vertex     //  vertices build up the graph
 		this.x = x;
 		this.y = y;
 		this.z = z;
+		this.settled =settled;
 	}
 	
 	
@@ -37,6 +39,11 @@ public class Vertex     //  vertices build up the graph
 		this.z = z;
 	}
 	
+	public void setSettled (boolean settled)
+	{
+		this.settled = settled;
+	}
+	
 	public int getID ()
 	{
 		return ID;
@@ -55,6 +62,11 @@ public class Vertex     //  vertices build up the graph
 	public double getZ ()
 	{
 		return z;
+	}
+	
+	public boolean getSettled ()
+	{
+		return settled;
 	}
 
 }

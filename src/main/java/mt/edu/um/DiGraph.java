@@ -28,7 +28,7 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 		
 		Random randGen = new Random();
 		int eProb = 0;    // will represent all the possible number of edges that may exist
-		boolean settled = false;
+		boolean settled = false;    // for later use in shortest path (default value is false)
 	    
 		// creating the vertices of the graph
 		for (int i = 0; i < n; ++i)

@@ -1,7 +1,6 @@
 package mt.edu.um;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 
 public class Main 
@@ -20,7 +19,7 @@ public class Main
         System.out.println("Edge Size: " + dg.getEdgeSize());
         
         Vertex v1 = dg.getVertex(0);
-        Vertex v2 = dg.getVertex(1);
+        //Vertex v2 = dg.getVertex(1);
        
         System.out.println("Vertex 1 ID: " + v1.getID());
         /*
@@ -38,7 +37,11 @@ public class Main
         
         sp.path(v1, v1);  // gives the same
         */
+        double pathLength = 0;
+        ShortestPath sp = new ShortestPath();
         
+        pathLength = sp.shortestPath(2, 3, dg);
+        System.out.println("Path: " + pathLength);
         
     }
 }

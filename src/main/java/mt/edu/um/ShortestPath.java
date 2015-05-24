@@ -21,12 +21,22 @@ public class ShortestPath  // finding the shortest path between 2 vertices (q & 
 			return 0.0;
 		}
 		
+		if (q == r)
+		{
+			System.out.println("Vertex returning to itself!");
+			return 0.0;
+		}
+		
 		double pathAcc = 0;
 		Vertex srcV, dstV;
+		List<Vertex> neighbours = new ArrayList<Vertex>();
 		
 		srcV = g.getVertex(q);
 		dstV = g.getVertex(r);
 		
+		neighbours = g.getNeighbours(srcV);
+		
+		return 0;
 		
 		
 	}
