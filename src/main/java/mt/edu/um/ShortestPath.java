@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.PriorityQueue;
 import java.util.Set;
 import java.util.TreeMap;
 
@@ -30,7 +31,27 @@ public class ShortestPath  // finding the shortest path between 2 vertices (q & 
 		double pathAcc = 0;   // temporary
 		Vertex srcV, dstV;    // source and destination vertices
 		List<Vertex> neighbours = new ArrayList<Vertex>();   
+		PriorityQueue<Double> vertQueue = new PriorityQueue<Double>();
+		//HashMap<Double, Integer> vertQueue = new HashMap<Double, Integer>();
+		List<Vertex> allVertices = new ArrayList<Vertex>();   // all vertices in the graph (V)
+		allVertices = g.getVertices();
+		allVertices.get(q).setDistance(0);
 		
+		for (int i = 0; i < allVertices.size(); ++i)
+		{
+			vertQueue.add(allVertices.get(i).getDistance());
+			System.out.println("no of distances: " + vertQueue.peek());
+		}
+		System.out.println("no of distances: " + vertQueue.size());
+		
+		//vertQueue.put(allVertices.get(q).getDistance(), allVertices.get(q).getID());
+		
+		while (!vertQueue.isEmpty())
+		{
+			
+		}
+		
+		/*
 		srcV = g.getVertex(q);
 		dstV = g.getVertex(r);
 		
@@ -39,7 +60,9 @@ public class ShortestPath  // finding the shortest path between 2 vertices (q & 
 		neighbours = g.getNeighbours(srcV);
 		System.out.println(neighbours);
 		
-		//for (int i = 0; i < g.getVertexSize())
+		for (int i = 0; i < g.getVertexSize())
+		*/
+		
 		
 		return 0;
 		
