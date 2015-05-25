@@ -27,14 +27,19 @@ public class ShortestPath  // finding the shortest path between 2 vertices (q & 
 			return 0.0;
 		}
 		
-		double pathAcc = 0;
-		Vertex srcV, dstV;
-		List<Vertex> neighbours = new ArrayList<Vertex>();
+		double pathAcc = 0;   // temporary
+		Vertex srcV, dstV;    // source and destination vertices
+		List<Vertex> neighbours = new ArrayList<Vertex>();   
 		
 		srcV = g.getVertex(q);
 		dstV = g.getVertex(r);
 		
+		srcV.setDistance(0);   //  setting source distance to 0
+		
 		neighbours = g.getNeighbours(srcV);
+		System.out.println(neighbours);
+		
+		//for (int i = 0; i < g.getVertexSize())
 		
 		return 0;
 		

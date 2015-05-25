@@ -9,7 +9,7 @@ public class Main
     {
         DiGraph dg = new DiGraph();
         
-        dg = dg.buildGraph(5, 0.5);
+        dg = dg.buildGraph(5, 0.8);
         
         
         //ShortestPath sp = new ShortestPath();

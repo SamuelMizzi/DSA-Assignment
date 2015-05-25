@@ -3,16 +3,16 @@ package mt.edu.um;
 public class Edge   // connections of the vertices found in the graph
 {
 	private Vertex source, destination;   
-	private double distance;
+	private double weight;
 	
 	
 	public Edge ()  { }
 	
-	public Edge (Vertex src, Vertex dst, double d)
+	public Edge (Vertex src, Vertex dst, double w)
 	{
 		this.setSource(src);
 		this.setDestination(dst);
-		this.setDistance(d);
+		this.setWeight(w);
 	}
 	
 	
@@ -26,9 +26,9 @@ public class Edge   // connections of the vertices found in the graph
 		destination = dst;
 	}
 	
-	public void setDistance (double d)
+	public void setWeight (double w)
 	{
-		distance = d;
+		weight = w;
 	}
 	
 	
@@ -42,8 +42,8 @@ public class Edge   // connections of the vertices found in the graph
 		return destination;
 	}
 	
-	public double getDistance ()
+	public double getWeight ()
 	{
-		return distance;
+		return weight;
 	}
 }

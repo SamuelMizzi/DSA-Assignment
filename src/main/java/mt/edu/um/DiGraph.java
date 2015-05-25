@@ -28,7 +28,7 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 		
 		Random randGen = new Random();
 		int eProb = 0;    // will represent all the possible number of edges that may exist
-		boolean settled = false;    // for later use in shortest path (default value is false)
+		double distance = Double.MAX_VALUE;    // for later use in shortest path 
 	    
 		// creating the vertices of the graph
 		for (int i = 0; i < n; ++i)
@@ -38,7 +38,7 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 	        double randY = dimensions();
 	        double randZ = dimensions();
 	        
-	        Vertex V = new Vertex(i, randX, randY, randZ, settled);
+	        Vertex V = new Vertex(i, randX, randY, randZ, distance);
 	        graph.adjList.add(V);
 	        
 	        System.out.println("Vertex: " + i);  // checking
@@ -75,11 +75,11 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
 				
 				else 
 				{
-					// working distance between the 2 vertices
+					// working weight between the 2 vertices
 					double dist = vertexDistance(a, b);
 					Edge E = new Edge(a, b, dist);
 					graph.edges.add(E);
-					System.out.println("Edge Created " + E.getDistance() + " Src: " + a.getID() + " Dst: " + b.getID());
+					System.out.println("Edge Created " + E.getWeight() + " Src: " + a.getID() + " Dst: " + b.getID());
 					// check if cycles can be created or not 
 					
 					
@@ -101,7 +101,7 @@ public class DiGraph   // a random directed graph (using an adjacency list as a 
         return randD;
 	}
 	
-	// method to find the distance of the edge between the two particular vertices
+	// method to find the weight of the edge between the two particular vertices
 	public double vertexDistance (Vertex a, Vertex b)  
 	{
 		double aX = a.getX(),

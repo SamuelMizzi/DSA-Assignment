@@ -4,18 +4,18 @@ package mt.edu.um;
 public class Vertex     //  vertices build up the graph
 {
 	private int ID;
-	private double x, y, z;
-	private boolean settled;
+	private double x, y, z, distance; 
+	//private boolean settled;
 	
 	public Vertex () { }
 	
-	public Vertex (int ID, double x, double y, double z, boolean settled)
+	public Vertex (int ID, double x, double y, double z, double distance)
 	{
 		this.ID = ID;
 		this.x = x;
 		this.y = y;
 		this.z = z;
-		this.settled =settled;
+		this.distance = distance;
 	}
 	
 	
@@ -39,10 +39,11 @@ public class Vertex     //  vertices build up the graph
 		this.z = z;
 	}
 	
-	public void setSettled (boolean settled)
+	public void setDistance (double distance)
 	{
-		this.settled = settled;
+		this.distance = distance;
 	}
+	
 	
 	public int getID ()
 	{
@@ -64,9 +65,9 @@ public class Vertex     //  vertices build up the graph
 		return z;
 	}
 	
-	public boolean getSettled ()
+	public double getDistance ()
 	{
-		return settled;
+		return distance;
 	}
 
 }
