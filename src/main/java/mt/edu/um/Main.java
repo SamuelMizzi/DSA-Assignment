@@ -43,5 +43,11 @@ public class Main
         pathLength = sp.shortestPath(2, 3, dg);
         System.out.println("Path: " + pathLength);
         
+        Dijkstra2 dj = new Dijkstra2();
+        pathLength = dj.dijkstra(dg, 2, 4);
+        System.out.println("Shortest path: " + pathLength);
+        
+        
+        
     }
 }

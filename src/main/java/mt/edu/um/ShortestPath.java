@@ -29,7 +29,7 @@ public class ShortestPath  // finding the shortest path between 2 vertices (q & 
 		}
 		
 		double pathAcc = 0;   // temporary
-		Vertex srcV, dstV;    // source and destination vertices
+		Vertex srcV, dstV, u;    // source and destination vertices
 		List<Vertex> neighbours = new ArrayList<Vertex>();   
 		PriorityQueue<Double> vertQueue = new PriorityQueue<Double>();
 		//HashMap<Double, Integer> vertQueue = new HashMap<Double, Integer>();
@@ -48,7 +48,9 @@ public class ShortestPath  // finding the shortest path between 2 vertices (q & 
 		
 		while (!vertQueue.isEmpty())
 		{
+			pathAcc = vertQueue.poll();
 			
+			//for (Edge e: g.)
 		}
 		
 		/*
